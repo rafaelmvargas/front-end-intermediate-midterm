@@ -4,7 +4,7 @@
 
 Read the React documentation for [Hooks](https://reactjs.org/docs/hooks-intro.html). Pay special attention to the [useState](https://reactjs.org/docs/hooks-state.html) and [useEffect](https://reactjs.org/docs/hooks-effect.html) hooks.
 
-## Homework
+<!-- ## Homework
 
 Create a Loading component:
 
@@ -63,7 +63,7 @@ And displays this [SVG file](https://codepen.io/aurer/pen/jEGbA) while loading i
       repeatCount="indefinite"/>
     </path>
   </svg>
-```
+``` -->
 
 ## Exercise
 
@@ -258,7 +258,7 @@ We could add the fetching capability in the Stories component as follows:
 ```js
 import React from "react";
 
-const nytapi = "IBOst14SeT5OXhGNk8ZQOPhVBhj9ED0h";
+const nytapi = "RuG9N6lD1Xss81PdRbmhuiJHjuiPEt6R";
 
 const Stories = () => {
   const [stories, setStories] = React.useState([]);
@@ -283,7 +283,7 @@ const Stories = () => {
 export default Stories;
 ```
 
-But recall from the previous sessions, it is usually better to locate your data at the highest level of the React tree.
+But it is better to centralize your data at the highest level of the React tree. React has a one way data flow.
 
 <!-- END DEMO -->
 
@@ -330,7 +330,7 @@ import Nav from "./Nav";
 import Stories from "./Stories";
 
 const navItems = ["arts", "books", "fashion", "food", "movies", "travel"];
-const nytapi = "IBOst14SeT5OXhGNk8ZQOPhVBhj9ED0h";
+const nytapi = "RuG9N6lD1Xss81PdRbmhuiJHjuiPEt6R";
 const section = "arts";
 
 function App() {
@@ -483,7 +483,7 @@ import Nav from "./Nav";
 import Stories from "./Stories";
 
 const navItems = ["arts", "books", "fashion", "food", "movies", "travel"];
-const nytapi = "IBOst14SeT5OXhGNk8ZQOPhVBhj9ED0h";
+const nytapi = "RuG9N6lD1Xss81PdRbmhuiJHjuiPEt6R";
 const section = "arts";
 
 function App() {
@@ -527,7 +527,7 @@ import Nav from "./Nav";
 import Stories from "./Stories";
 
 const navItems = ["arts", "books", "fashion", "food", "movies", "travel"];
-const nytapi = "IBOst14SeT5OXhGNk8ZQOPhVBhj9ED0h";
+const nytapi = "RuG9N6lD1Xss81PdRbmhuiJHjuiPEt6R";
 const section = "arts";
 
 function App() {
@@ -579,7 +579,7 @@ import Nav from "./Nav";
 import Stories from "./Stories";
 
 const navItems = ["arts", "books", "fashion", "food", "movies", "travel"];
-const nytapi = "IBOst14SeT5OXhGNk8ZQOPhVBhj9ED0h";
+const nytapi = "RuG9N6lD1Xss81PdRbmhuiJHjuiPEt6R";
 
 function App() {
   const [stories, setStories] = React.useState([]);
@@ -681,7 +681,7 @@ const Nav = (props) => {
 export default Nav;
 ```
 
-Once in NavItems we will create a local function `sendSection` and run it on an onClick event:
+Once in NavItem we will create a local function `sendSection` and run it on an onClick event:
 
 ```js
 import React from "react";
@@ -719,7 +719,7 @@ React.useEffect(() => {
 }, [section]);
 ```
 
-Note we've added `section` to the previously empty array. The array allows you to determine when the effect will run. THe empty array caused the effect to run once after the component rendered. When we add a piece of state or a prop to the array the effect will run whenever that state or prop changes.
+Note we've added `section` to the previously empty useFetch dependencies array. The array allows you to determine when the effect will run. THe empty array caused the effect to run once after the component rendered. When we add a piece of state or a prop to the array the effect will run whenever that state or prop changes.
 
 `.catch` has also been added at the end of the promise chain to log any errors that might occur.
 
@@ -886,7 +886,7 @@ nav a:not(.active):hover {
 
 ## DEMO Cookies
 
-Currently if a use refreshes the page the section is reset to default. We can store the current section in a cookie to prevent this.
+Currently if a user refreshes the page the section is reset to the default. We can store the current section in a cookie to prevent this.
 
 ```js
 import React from "react";
@@ -898,7 +898,7 @@ import Loader from "./loader";
 import "./app.css";
 
 const navItems = ["arts", "books", "fashion", "food", "movies", "travel"];
-const nytapi = "IBOst14SeT5OXhGNk8ZQOPhVBhj9ED0h";
+const nytapi = "RuG9N6lD1Xss81PdRbmhuiJHjuiPEt6R";
 
 const getExpirationDate = (time) => {
   return new Date(+new Date() + time).toUTCString();
