@@ -4,9 +4,14 @@
 
 Read the React documentation for [Hooks](https://reactjs.org/docs/hooks-intro.html). Pay special attention to the [useState](https://reactjs.org/docs/hooks-state.html) and [useEffect](https://reactjs.org/docs/hooks-effect.html) hooks.
 
-<!-- ## Homework
+## Midterm
 
-Create a Loading component:
+The midterm assignment is to refactor All the News including (but not limited to):
+
+1. destructuring all props in the components (e.g. no more `props.story` or `story.title`)
+2. converting all css to styled components (you should delete all css files after completion)
+3. using the directory structure outlined below (e.g. `story > index.js & styles.js`)
+3. creating a Loading component:
 
 ```js
 import React from "react";
@@ -63,7 +68,7 @@ And displays this [SVG file](https://codepen.io/aurer/pen/jEGbA) while loading i
       repeatCount="indefinite"/>
     </path>
   </svg>
-``` -->
+```
 
 ## Exercise
 
@@ -500,9 +505,9 @@ function App() {
       .then(setLoading(false));
   }, []);
 
-  if (loading) {
-    return <h2>Loading...</h2>;
-  }
+    if (loading) {
+      return <h2>Loading...</h2>;
+    }
 
   return (
     <>
@@ -757,6 +762,41 @@ const Nav = (props) => {
 export default Nav;
 ```
 
+Remove the `fill` attribute in the svg file. Change it it using inline css:
+
+```js
+<img
+  style={{ fill: "white" }}
+```
+
+Note: `style` expects an object. we could also write it:
+
+```js
+const Nav = (props) => {
+  const svgStyles = {
+    fill: "white",
+  };
+  return (
+    <nav>
+      <ul>
+        <li className="logo">
+          <a href="#top">
+            <img
+              style={svgStyles}
+```
+
+[URL encode](https://yoksel.github.io/url-encoder/) the logo and use it inline:
+
+```js
+<img
+  style={svgStyles}
+  src="data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3Csvg width='256px' fill='white' height='188px' viewBox='0 0 256 188' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' preserveAspectRatio='xMidYMid'%3E%3Cg%3E%3Cpath d='M244.675204,104.605355 C237.22468,95.3667056 227.837021,89.257276 216.214203,86.5750874 C219.790454,81.0616997 221.727591,74.9522702 221.727591,68.2467987 C221.727591,58.8591385 218.44936,50.8125728 211.743888,44.1071013 C205.038417,37.4016298 196.991852,34.1233993 187.60419,34.1233993 C179.110593,34.1233993 171.809081,36.8055879 165.55064,42.3189756 C160.335274,29.5040745 151.990688,19.2223516 140.36787,11.4738068 C128.894063,3.87427241 116.228172,0 102.370198,0 C83.4458673,0 67.3527358,6.70547148 54.0908033,19.967404 C40.8288708,33.2293365 34.1233993,49.322468 34.1233993,68.2467987 C34.1233993,69.4388825 34.2724098,71.3760187 34.4214203,73.9091969 C23.9906869,78.8265425 15.6461001,86.1280559 9.38766007,95.9627475 C3.12922003,105.648429 0,116.377183 0,127.85099 C0,144.242143 5.81140862,158.398138 17.5832364,170.020955 C29.2060536,181.643772 43.3620489,187.60419 59.7532014,187.60419 L204.740397,187.60419 C218.896392,187.60419 230.96624,182.537835 240.949942,172.554133 C250.933643,162.570431 256,150.500582 256,136.344587 C255.850989,124.572759 252.125728,113.993015 244.675204,104.605355 L244.675204,104.605355 L244.675204,104.605355 Z M200.717113,187.60419 L179.557626,187.60419 L172.405122,165.25262 L131.12922,165.25262 L123.976717,187.60419 L102.817229,187.60419 L140.963912,81.2107101 L162.570431,81.2107101 L200.717113,187.60419 L200.717113,187.60419 L200.717113,187.60419 Z M136.493598,148.265424 L167.040745,148.265424 L151.841677,100.284051 L136.493598,148.265424 L136.493598,148.265424 Z' %3E%3C/path%3E%3C/g%3E%3C/svg%3E%0A"
+  alt="logo"
+/>
+```
+
+## Section Headers
+
 We'll also add a header to the top of the article list.
 
 In App.js:
@@ -886,7 +926,7 @@ nav a:not(.active):hover {
 
 ## DEMO Cookies
 
-Currently if a user refreshes the page the section is reset to the default. We can store the current section in a cookie to prevent this.
+Currently if a user refreshes the page the section is reset to the default: `const [section, setSection] = React.useState("arts");`. We could store the current section in a cookie to prevent this.
 
 ```js
 import React from "react";
@@ -984,10 +1024,7 @@ React.useEffect(() => {
 
 ## Styled Components
 
-Examine:
-
-- the New York Times website in the dev tool's elements panel.
-- the Sign Up button on [Good Reads](https://www.goodreads.com/).
+Examine the New York Times website in the dev tool's elements panel.
 
 We will use [Styled Components](https://styled-components.com/) to refactor our CSS.
 
@@ -999,7 +1036,7 @@ We'll start on the lower level components and work our way up beginning with the
 import React from "react";
 import styled from "styled-components";
 
-const Entry = styled.div`
+const Entry = styled.article`
   display: grid;
   grid-template-columns: 1fr 7fr;
   grid-column-gap: 1rem;
@@ -1101,7 +1138,7 @@ export default Story;
 
 ## Project Structure
 
-Create a story directory in components and move Story.js into it.
+Create a story directory in components and move Story.js into it. Correct the import statement in Stories.js.
 
 Create a separate styles.js file in the directory and move the styled components into it:
 
@@ -1169,7 +1206,7 @@ Rename Story.js to index.js and check the import statement in Stories.js:
 import Story from "./story";
 ```
 
-Stories:
+Use styled components in Stories:
 
 ```js
 import React from "react";
