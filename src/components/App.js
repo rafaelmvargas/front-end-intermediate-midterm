@@ -39,7 +39,7 @@ function App() {
     <>
       <Header siteTitle="All the News that Fits We Print" />
       <Nav navItems={navItems} setSection={setSection} section={section} />
-      {loading || stories.length === 0 ? (
+      {loading && stories.length === 0 ? (
         <h2>Loading...</h2>
       ) : (
         <Stories stories={stories} section={section} />
