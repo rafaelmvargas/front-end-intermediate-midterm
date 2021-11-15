@@ -6,7 +6,8 @@ const Story = ({ story: { short_url, multimedia, title, abstract } }) => {
     <Wrapper href={short_url}>
       <Entry>
         <StoryImg
-          src={multimedia ? multimedia[2].url : "/img/no-image.png"}
+          // FIXME: Temporarily set multimedia[0] from multimedia[2]
+          src={multimedia ? multimedia[0].url : "/img/no-image.png"}
           alt="images"
         />
         <div>
