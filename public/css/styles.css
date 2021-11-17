@@ -35,7 +35,7 @@ html {
     "sectionhead sectionhead"
     "entry entry";
 }
-
+/* added  */
 header {
   height: 320px;
   background: url(../img/img.jpg) center no-repeat;
@@ -50,6 +50,7 @@ h1 {
   font-weight: normal;
 }
 
+/* added  */
 @media (max-width: 640px) {
   header {
     height: 120px;
