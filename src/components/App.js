@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./Header";
+import Header from "./header";
 import Loading from "./loading/Loading";
 import Nav from "./Nav";
 import Stories from "./stories";
