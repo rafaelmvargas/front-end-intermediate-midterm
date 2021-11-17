@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Header";
 import Loading from "./loading/Loading";
 import Nav from "./Nav";
-import Stories from "./Stories";
+import Stories from "./stories";
 
 // FIXME: Clean up StoryImg here
 // import { StoryImg } from "./story/styles";
