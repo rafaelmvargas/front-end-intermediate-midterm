@@ -3,7 +3,9 @@ import Header from "./Header";
 import Loading from "./loading/Loading";
 import Nav from "./Nav";
 import Stories from "./Stories";
-import { StoryImg } from "./story/styles";
+
+// FIXME: Clean up StoryImg here
+// import { StoryImg } from "./story/styles";
 
 const navItems = ["arts", "books", "fashion", "food", "movies", "travel"];
 const nytapi = "v6opbbkTilATsgJHrFEGQKYG4mQFVga6";
@@ -17,9 +19,8 @@ function App() {
     const url = new URL(window.location.href);
     const hash = url.hash.slice(1);
     if (hash !== "undefined") {
-      console.log(" hash ", hash);
-
       // FIXME: Commented part of if array
+      // console.log(" hash ", hash);
       //   setSection(hash);
       // } else {
       setSection("arts");
@@ -49,12 +50,6 @@ function App() {
       ) : (
         <Stories stories={stories} section={section} />
       )}
-
-      {/* {loading || stories.length === 0 ? (
-        <h2>Loading...</h2>
-      ) : (
-        <Stories stories={stories} section={section} />
-      )} */}
     </>
   );
 }

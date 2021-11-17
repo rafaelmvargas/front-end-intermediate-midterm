@@ -10,19 +10,19 @@
 // export default NavItem;
 import React from "react";
 
-const NavItem = (props) => {
+const NavItem = ({ setSection, section, navItem }) => {
   const sendSection = (section) => {
-    props.setSection(section);
+    setSection(section);
   };
 
   return (
     <li>
       <a
-        className={props.navItem === props.section ? "active" : ""}
-        href={`#${props.navItem}`}
-        onClick={() => sendSection(props.navItem)}
+        className={navItem === section ? "active" : ""}
+        href={`#${navItem}`}
+        onClick={() => sendSection(navItem)}
       >
-        {props.navItem}
+        {navItem}
       </a>
     </li>
   );
