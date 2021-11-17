@@ -9,9 +9,10 @@ export const Header = styled.header`
     align-items: center;
     justify-content: center;
   }
-  
-@media (max-width: 640px) {
-  header {
-    height: 120px;
+
+  @media (max-width: 640px) {
+    header {
+      height: 120px;
+    }
   }
 `;
