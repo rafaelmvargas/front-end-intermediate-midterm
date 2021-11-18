@@ -1,10 +1,11 @@
 import React from "react";
+import { PageHeader, PageTitle } from "./styles";
 
-const Header = ({siteTitle}) => {
+const Header = ({ siteTitle }) => {
   return (
-    <header>
-      <h1>{siteTitle}</h1>
-    </header>
+    <PageHeader>
+      <PageTitle>{siteTitle}</PageTitle>
+    </PageHeader>
   );
 };
 

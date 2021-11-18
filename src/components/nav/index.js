@@ -1,15 +1,18 @@
 import React from "react";
-import NavItem from "./NavItem";
+
+import { StyledUList, StyledNav } from "./styles";
+import { StyledLogo } from "../navitem/styles";
+import NavItem from "../navitem";
 
 const Nav = ({ navItems, setSection, section }) => {
   return (
-    <nav>
-      <ul>
-        <li className="logo">
+    <StyledNav>
+      <StyledUList>
+        <StyledLogo>
           <a href="#top">
             <img src="img/logo.svg" alt="logo" />
           </a>
-        </li>
+        </StyledLogo>
         {navItems.map((navItem, index) => (
           <NavItem
             key={index}
@@ -18,8 +21,8 @@ const Nav = ({ navItems, setSection, section }) => {
             section={section}
           />
         ))}
-      </ul>
-    </nav>
+      </StyledUList>
+    </StyledNav>
   );
 };
 

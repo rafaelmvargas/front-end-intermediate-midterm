@@ -1,8 +1,9 @@
 import React from "react";
-import Header from "./header";
-import Loading from "./loading/Loading";
-import Nav from "./Nav";
-import Stories from "./stories";
+import Header from "../header";
+import Loading from "../loading/Loading";
+import Nav from "../nav";
+import Stories from "../stories";
+import { Container } from "./styles";
 
 // FIXME: Clean up StoryImg here
 // import { StoryImg } from "./story/styles";
@@ -43,13 +44,15 @@ function App() {
 
   return (
     <>
-      <Header siteTitle="All the News that Fits We Print" />
-      <Nav navItems={navItems} setSection={setSection} section={section} />
-      {loading || stories.length === 0 ? (
-        <Loading />
-      ) : (
-        <Stories stories={stories} section={section} />
-      )}
+      <Container>
+        <Header siteTitle="All the News that Fits We Print" />
+        <Nav navItems={navItems} setSection={setSection} section={section} />
+        {loading || stories.length === 0 ? (
+          <Loading />
+        ) : (
+          <Stories stories={stories} section={section} />
+        )}
+      </Container>
     </>
   );
 }

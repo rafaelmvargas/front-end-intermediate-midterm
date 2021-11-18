@@ -11,6 +11,14 @@ export const Entry = styled.section`
   grid-column-gap: 1rem;
   margin-bottom: 1rem;
   grid-area: "entry";
+
+  .entry a {
+    color: #007eb6;
+    text-decoration: none;
+  }
+  .entry h3 + p {
+    margin-top: 0;
+  }
 `;
 
 export const StoryTitle = styled.h3`
