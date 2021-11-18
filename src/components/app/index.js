@@ -29,7 +29,7 @@ function App() {
     )
       .then((response) => response.json())
       .then((data) => setStories(data.results))
-      .then(setLoading(true))
+      .then(setLoading(false))
       .catch((error) => {
         console.log(error);
       });
